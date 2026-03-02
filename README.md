@@ -1,1 +1,3 @@
-Yihan Wang 2617289
+Team member:
+Jiachi Zhu
+Yihan Wang
