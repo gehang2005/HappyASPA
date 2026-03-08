@@ -4,7 +4,7 @@ This project utilizes a lightweight, modular architecture designed for rapid Agi
 
 | Category | Technology | Description |
 | --- | --- | --- |
-| **Backend** | ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python) ![Flask](https://img.shields.io/badge/Flask-2.0%2B-black?logo=flask) | **Python Flask**: A micro-framework chosen for its simplicity and flexibility, allowing our team to implement features quickly without complex boilerplate. |
+| **Backend** | ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python) ![Flask](https://img.shields.io/badge/Flask-3.0.3-black?logo=flask) | **Python Flask**: A micro-framework chosen for its simplicity and flexibility, allowing our team to implement features quickly without complex boilerplate. |
 | **Frontend** | ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5) ![JS](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black) | **Bootstrap 5 (CDN)**: Used for responsive design and consistent UI components without writing extensive custom CSS. **Jinja2**: Templating engine for dynamic HTML rendering. |
 | **Database** | ![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite) | **SQLite**: Serverless and zero-configuration database, ensuring a consistent development environment across all team members' local machines. |
 | **Tools** | ![Git](https://img.shields.io/badge/Git-F05032?logo=git) ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?logo=visual-studio-code) | **Git/GitHub**: For version control. |
