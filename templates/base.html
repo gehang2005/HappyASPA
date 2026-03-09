@@ -15,6 +15,29 @@
         rel="stylesheet">
 
   {% block head %}{% endblock %}
+  <style>
+  /* 修改所有带有 bg-primary 类的背景颜色 */
+  .bg-primary {
+    background-color: #12356B !important;
+  }
+
+  /* 修改所有主色按钮的颜色及边框 */
+  .btn-primary {
+    background-color: #12356B !important;
+    border-color: #12356B !important;
+  }
+  
+  /* 鼠标悬停在按钮上时稍微加深一点，提升交互感 */
+  .btn-primary:hover {
+    background-color: #0d274f !important;
+    border-color: #0d274f !important;
+  }
+
+  /* 修改所有 primary 文本颜色（如图标和文字链接） */
+  .text-primary {
+    color: #3B6EBF !important;
+  }
+</style>
 </head>
 <body>
 
