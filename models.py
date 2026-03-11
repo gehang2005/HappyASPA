@@ -199,7 +199,38 @@ class UserWritingSubmission(db.Model):
     feedback     = db.Column(db.Text,    nullable=True)   # 预留 AI 反馈字段
     score        = db.Column(db.Float,   nullable=True)
 
+# ─────────────────────────────────────────────
+# Speaking（新增口语模块）
+# ─────────────────────────────────────────────
+class SpeakingExercise(db.Model):
+    __tablename__ = 'speaking_exercises'
 
+    id               = db.Column(db.Integer, primary_key=True)
+    title            = db.Column(db.String(200), nullable=False)
+    prompt           = db.Column(db.Text,        nullable=False)  # 口语题目（比如“描述你的家乡”）
+    sample_answer    = db.Column(db.Text,        nullable=True)   # 参考回答
+    difficulty       = db.Column(db.Integer,     default=1)       # 1–5
+    category         = db.Column(db.String(50),  nullable=True)   # 比如“日常对话/商务/考试”
+    time_limit_seconds = db.Column(db.Integer, nullable=True)     # 答题时间限制
+    created_at       = db.Column(db.DateTime,    default=datetime.utcnow)
+
+    progress = db.relationship('UserSpeakingProgress', backref='exercise', lazy=True)
+
+
+class UserSpeakingProgress(db.Model):
+    __tablename__ = 'user_speaking_progress'
+
+    id              = db.Column(db.Integer, primary_key=True)
+    user_id         = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    exercise_id     = db.Column(db.Integer, db.ForeignKey('speaking_exercises.id'), nullable=False)
+    audio_url       = db.Column(db.String(256), nullable=True)  # 存储用户录音文件URL
+    transcript      = db.Column(db.Text,        nullable=True)  # 录音转文字（可选）
+    completed       = db.Column(db.Boolean,     default=False)
+    score           = db.Column(db.Float,       nullable=True)  # 评分（手动/AI）
+    feedback        = db.Column(db.Text,        nullable=True)  # 反馈（比如发音建议）
+    submitted_at    = db.Column(db.DateTime,    nullable=True)
+
+    
 # ─────────────────────────────────────────────
 # Activity Log（学习轨迹核心）
 # ─────────────────────────────────────────────

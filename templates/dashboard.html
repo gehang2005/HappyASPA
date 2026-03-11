@@ -22,7 +22,8 @@
     ('flashcard',  'Flashcards',  'bi-card-text',     'success'),
     ('listening',  'Listening',   'bi-headphones',    'info'),
     ('writing',    'Writing',     'bi-pencil-square', 'warning'),
-    ('forum',      'Forum',       'bi-chat-dots',     'danger')
+    ('forum',      'Forum',       'bi-chat-dots',     'danger'),
+    ('speaking',   'Speaking',    'bi-mic',           'info')
   ] %}
   {% for key, label, icon, color in modules %}
   <div class="col-6 col-md-4 col-lg-2">
@@ -126,7 +127,22 @@
     </a>
   </div>
 
-</div>
+  <div class="col-sm-6 col-lg-4">
+    <a href="{{ url_for('speaking.index') }}" class="text-decoration-none">
+      <div class="card border-0 shadow-sm h-100 card-hover">
+        <div class="card-body d-flex align-items-center gap-3 p-4">
+          <div class="rounded-3 bg-info bg-opacity-10 p-3">
+            <i class="bi bi-mic text-info" style="font-size: 1.8rem;"></i>
+          </div>
+          <div>
+            <h6 class="fw-bold mb-1">Speaking</h6>
+            <p class="mb-0 text-muted small">Practice academic presentations & discussions</p>
+          </div>
+          <i class="bi bi-chevron-right ms-auto text-muted"></i>
+        </div>
+      </div>
+    </a>
+  </div>
 
 <!-- ── Recent Activity ─────────────────────────────────────────────────── -->
 <h5 class="fw-bold mb-3"><i class="bi bi-clock-history text-primary me-2"></i>Recent Activity</h5>
@@ -141,7 +157,8 @@
           'flashcard':  ('bi-card-text',     'text-success'),
           'listening':  ('bi-headphones',    'text-info'),
           'writing':    ('bi-pencil-square', 'text-warning'),
-          'forum':      ('bi-chat-dots',     'text-danger')
+          'forum':      ('bi-chat-dots',     'text-danger'),
+          'speaking':   ('bi-mic',           'text-info')
         } %}
         {% set icon_info = icon_map.get(log.module, ('bi-activity', 'text-secondary')) %}
         <i class="bi {{ icon_info[0] }} {{ icon_info[1] }}" style="font-size: 1.2rem;"></i>

@@ -35,6 +35,7 @@ def create_app():
     from blueprints.forum      import forum_bp
     from blueprints.listening  import listening_bp
     from blueprints.writing    import writing_bp
+    from blueprints.speaking   import speaking_bp  # 新增：导入口语蓝图
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(dashboard_bp)
@@ -43,6 +44,7 @@ def create_app():
     app.register_blueprint(forum_bp)
     app.register_blueprint(listening_bp)
     app.register_blueprint(writing_bp)
+    app.register_blueprint(speaking_bp)  # 新增：注册口语蓝图
 
     # ── Database initialisation ───────────────────────────────────────────────
     with app.app_context():

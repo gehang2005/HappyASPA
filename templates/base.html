@@ -86,11 +86,18 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link {% if request.blueprint == 'speaking' %}active{% endif %}"
+               href="{{ url_for('speaking.index') }}">
+              <i class="bi bi-mic me-1"></i>Speaking
+            </a>
+          </li>  
+          <li class="nav-item">
             <a class="nav-link {% if request.blueprint == 'writing' %}active{% endif %}"
                href="{{ url_for('writing.index') }}">
               <i class="bi bi-pencil-square me-1"></i>Writing
             </a>
           </li>
+          
         </ul>
 
         <ul class="navbar-nav ms-auto">
